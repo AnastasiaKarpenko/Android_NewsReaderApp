@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import ws.tilda.anastasia.newsreader.model.NewsArticle;
@@ -28,6 +30,13 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
 
     @Override
     public void onBindViewHolder(HomeNewsViewHolder holder, int position) {
+        NewsArticle newsArticle = newsArticles.get(position);
+        Glide.with(holder.cardImageView.getContext()).load(newsArticle.getImageUrl())
+                .centerCrop()
+                .into(holder.cardImageView);
+        holder.cardTitleTextView.setText(newsArticle.getTitle());
+        holder.cardTimeTextView.setText(newsArticle.getTime());
+        holder.cardContentTextView.setText(newsArticle.getDetails());
 
     }
 
