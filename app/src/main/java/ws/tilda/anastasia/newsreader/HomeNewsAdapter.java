@@ -1,6 +1,7 @@
 package ws.tilda.anastasia.newsreader;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -20,7 +21,9 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
 
     @Override
     public HomeNewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home_news, parent, false);
+        HomeNewsViewHolder homeNewsViewHolder = new HomeNewsViewHolder(view);
+        return homeNewsViewHolder;
     }
 
     @Override
