@@ -1,4 +1,3 @@
-
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,43 +19,45 @@
 
             <ImageView
                 android:id="@+id/card_news_image"
+                android:scaleType="centerCrop"
                 app:layout_aspectRatio="178%"
                 app:layout_widthPercent="100%"
-                android:scaleType="centerCrop"
                 tools:src="@drawable/sample"/>
 
         </android.support.percent.PercentRelativeLayout>
 
         <TextView
             android:id="@+id/card_news_title"
+            style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/TextAppearance.AppCompat.Title"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="18dp"
             android:maxLines="1"
             tools:text="News Title"/>
+
         <TextView
             android:id="@+id/card_news_time"
+            style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="4dp"
             android:textColor="#808080"
-            style="@style/TextAppearance.AppCompat.Body1"
             tools:text="Today"/>
+
         <TextView
             android:id="@+id/card_news_content"
+            style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="20dp"
             android:maxLines="4"
-            style="@style/TextAppearance.AppCompat.Body1"
             tools:text="This is a sample content.This is a sample content.This is a sample content.This is a sample content.This is a sample content.This is a sample content.This is a sample content.This is a sample content.vvvvvvvvvvvvThis is a sample content.This is a sample content.This is a sample content.This is a sample content. This is a sample content. This is a sample content. This is a sample content. This is a sample content. This is a sample content."/>
 
     </LinearLayout>
