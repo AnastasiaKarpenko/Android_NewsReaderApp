@@ -27,6 +27,13 @@ public class NewsDetailsActivity extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.activity_news_details_webview);
         progressBar = (ProgressBar) findViewById(R.id.activity_news_details_progressbar);
+
+        int index = getIntent().getIntExtra(KEY_INDEX, -1);
+        if(index != -1) {
+            updateNewsDetails(index);
+        } else {
+            Toast.makeText(NewsDetailsActivity.this, "Sorry, incorrect index passed", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void updateNewsDetails(int index) {
