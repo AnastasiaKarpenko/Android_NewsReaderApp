@@ -13,6 +13,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
             android:resizeableActivity="true">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="100dp"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
