@@ -1,5 +1,7 @@
 package ws.tilda.anastasia.newsreader;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +13,10 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import static android.R.attr.start;
+
 public class NewsDetailsActivity extends AppCompatActivity {
+    public static final String KEY_INDEX = "news_index";
     private WebView webView;
     private ProgressBar progressBar;
 
@@ -46,6 +51,11 @@ public class NewsDetailsActivity extends AppCompatActivity {
 
         webView.loadUrl(NewsStore.getNewsArticles().get(index).getUrlToArticle());
         getSupportActionBar().setTitle(NewsStore.getNewsArticles().get(index).getTitle());
+    }
 
+    public static void launch(Context context, int index) {
+        Intent intent = new Intent(context, NewsDetailsActivity.class);
+        intent.putExtra(KEY_INDEX, index);
+        context.startActivity(intent);
     }
 }
