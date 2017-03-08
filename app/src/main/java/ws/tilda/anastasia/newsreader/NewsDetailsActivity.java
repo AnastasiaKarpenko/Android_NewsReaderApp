@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -24,6 +25,8 @@ public class NewsDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_details);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         webView = (WebView) findViewById(R.id.activity_news_details_webview);
         progressBar = (ProgressBar) findViewById(R.id.activity_news_details_progressbar);
@@ -64,5 +67,15 @@ public class NewsDetailsActivity extends AppCompatActivity {
         Intent intent = new Intent(context, NewsDetailsActivity.class);
         intent.putExtra(KEY_INDEX, index);
         context.startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
