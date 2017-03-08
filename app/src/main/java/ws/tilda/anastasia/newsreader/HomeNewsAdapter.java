@@ -41,10 +41,9 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    NewsDetailsActivity.launch(v.getContext(), position);
+                NewsDetailsActivity.launch(v.getContext(), position);
             }
         });
-
     }
 
     @Override
