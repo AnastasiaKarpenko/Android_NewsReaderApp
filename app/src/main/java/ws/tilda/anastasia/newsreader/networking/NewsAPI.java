@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 import ws.tilda.anastasia.newsreader.model.GetArtilcesResponse;
 
 public class NewsAPI {
-    public static final String APIKEY = "PutYourKeyHere";
+    public static final String APIKEY = "";
     public static final String APIPATH = "https://newsapi.org/v1/";
 
     private static NewsService newsService = null;

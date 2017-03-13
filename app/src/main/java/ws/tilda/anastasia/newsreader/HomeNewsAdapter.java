@@ -11,13 +11,13 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import ws.tilda.anastasia.newsreader.model.NewsArticle;
+import ws.tilda.anastasia.newsreader.model.Article;
 
 
 public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNewsViewHolder> {
-    private List<NewsArticle> newsArticles;
+    private List<Article> newsArticles;
 
-    public HomeNewsAdapter(List<NewsArticle> newsArticles) {
+    public HomeNewsAdapter(List<Article> newsArticles) {
         this.newsArticles = newsArticles;
     }
 
@@ -30,13 +30,13 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
 
     @Override
     public void onBindViewHolder(HomeNewsViewHolder holder, final int position) {
-        NewsArticle newsArticle = newsArticles.get(position);
-        Glide.with(holder.cardImageView.getContext()).load(newsArticle.getImageUrl())
+        Article newsArticle = newsArticles.get(position);
+        Glide.with(holder.cardImageView.getContext()).load(newsArticle.getUrlToImage())
                 .centerCrop()
                 .into(holder.cardImageView);
         holder.cardTitleTextView.setText(newsArticle.getTitle());
-        holder.cardTimeTextView.setText(newsArticle.getTime());
-        holder.cardContentTextView.setText(newsArticle.getDetails());
+        holder.cardTimeTextView.setText(newsArticle.getPublishedAt());
+        holder.cardContentTextView.setText(newsArticle.getDescription());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

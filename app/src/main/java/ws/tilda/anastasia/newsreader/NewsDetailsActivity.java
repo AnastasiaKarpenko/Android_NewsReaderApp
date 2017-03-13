@@ -59,8 +59,8 @@ public class NewsDetailsActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl(NewsStore.getNewsArticles().get(index).getUrlToArticle());
-        getSupportActionBar().setTitle(NewsStore.getNewsArticles().get(index).getTitle());
+        webView.loadUrl(NewsStore.getArticles().get(index).getUrl());
+        getSupportActionBar().setTitle(NewsStore.getArticles().get(index).getTitle());
     }
 
     public static void launch(Context context, int index) {
