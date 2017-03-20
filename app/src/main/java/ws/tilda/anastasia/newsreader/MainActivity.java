@@ -2,19 +2,14 @@ package ws.tilda.anastasia.newsreader;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import ws.tilda.anastasia.newsreader.model.GetArtilcesResponse;
-import ws.tilda.anastasia.newsreader.model.NewsArticle;
 import ws.tilda.anastasia.newsreader.networking.NewsAPI;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         newsRecyclerView = (RecyclerView) findViewById(R.id.activity_main_recyclerview);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         Call<GetArtilcesResponse> call = NewsAPI.getApi().getArticles("reuters", "top");
         call.enqueue(new Callback<GetArtilcesResponse>() {

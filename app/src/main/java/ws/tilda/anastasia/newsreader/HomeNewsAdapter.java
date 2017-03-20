@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import ws.tilda.anastasia.newsreader.model.Article;
+import ws.tilda.anastasia.newsreader.utils.DateUtils;
 
 
 public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNewsViewHolder> {
@@ -35,7 +36,7 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
                 .centerCrop()
                 .into(holder.cardImageView);
         holder.cardTitleTextView.setText(newsArticle.getTitle());
-        holder.cardTimeTextView.setText(newsArticle.getPublishedAt());
+        holder.cardTimeTextView.setText(DateUtils.formatNewsApiDate(newsArticle.getPublishedAt()));
         holder.cardContentTextView.setText(newsArticle.getDescription());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
