@@ -5,6 +5,6 @@ During this project I learned:
 - RecyclerView card implementation
 - Networking with Retrofit 2.0
 - GSON
+- WebViews
 - Android N multiwindow features
-- Analytics
-- Unit testing
+- Unit and instrumentation testing
