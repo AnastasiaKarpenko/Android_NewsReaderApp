@@ -1,5 +1,6 @@
 package ws.tilda.anastasia.newsreader;
 
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.List;
 
 import ws.tilda.anastasia.newsreader.model.Article;
 import ws.tilda.anastasia.newsreader.utils.DateUtils;
+
+import static com.google.firebase.analytics.FirebaseAnalytics.getInstance;
 
 
 public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNewsViewHolder> {
@@ -42,6 +46,11 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // log analytics
+                FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(v.getContext());
+                Bundle bundle = new Bundle();
+                bundle.putString("index", String.valueOf(position));
+                firebaseAnalytics.logEvent("cardClicked", bundle);
                 NewsDetailsActivity.launch(v.getContext(), position);
             }
         });
