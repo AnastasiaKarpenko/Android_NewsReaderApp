@@ -27,6 +27,7 @@ public class NewsAPI {
 
     public interface NewsService {
         @GET("articles?apiKey=" + APIKEY)
-        Call<GetArtilcesResponse> getArticles(@Query("source") String source, @Query("sortBy") String sortBy);
+        Call<GetArtilcesResponse> getArticles(@Query("source") String source,
+                                              @Query("sortBy") String sortBy);
     }
 }
