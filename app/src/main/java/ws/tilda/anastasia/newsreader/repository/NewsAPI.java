@@ -1,4 +1,4 @@
-package ws.tilda.anastasia.newsreader.networking;
+package ws.tilda.anastasia.newsreader.repository;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 import ws.tilda.anastasia.newsreader.model.GetArtilcesResponse;
 
 public class NewsAPI {
-    private static final String APIKEY = "PutYourOwnApiKey";
+    private static final String APIKEY = "cee5440324a04d879ccca686a1ecbd04";
     private static final String APIPATH = "https://newsapi.org/v1/";
 
     private static NewsService newsService = null;
